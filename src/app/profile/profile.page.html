@@ -6,4 +6,11 @@
 
 <ion-content padding>
 
+  <div id="images">
+    <div class="image" *ngFor="let post of ((userPosts | async)?.posts)">
+      <ion-card (click)="goTo(post)">
+        <ion-img src=" https://ucarecdn.com/{{ post }}/-/scale_crop/200x200/center/"> </ion-img>
+      </ion-card>
+    </div>
+  </div>
 </ion-content>

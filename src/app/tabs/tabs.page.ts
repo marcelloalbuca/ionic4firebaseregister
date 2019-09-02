@@ -4,15 +4,14 @@ import { IonTabs } from '@ionic/angular';
 @Component({
   selector: 'app-tabs',
   templateUrl: './tabs.page.html',
-  styleUrls: ['./tabs.page.scss'],
+  styleUrls: ['./tabs.page.scss']
 })
 export class TabsPage implements OnInit {
 
   @ViewChild('tabs') tabs: IonTabs;
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
-   this.tabs.select('feed');
+    this.tabs.select('feed');
   }
-
 }
