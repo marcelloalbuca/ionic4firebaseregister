@@ -5,18 +5,18 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PostPage } from './post.page';
+import { EditProfilePage } from './edit-profile.page';
 import { ShareModule } from '../share.module';
 
 const routes: Routes = [
   {
     path: '',
-    component: PostPage
+    component: EditProfilePage
   }
 ];
 
 @NgModule({
   imports: [CommonModule, FormsModule, IonicModule, RouterModule.forChild(routes), ShareModule],
-  declarations: [PostPage]
+  declarations: [EditProfilePage]
 })
-export class PostPageModule {}
+export class EditProfilePageModule {}

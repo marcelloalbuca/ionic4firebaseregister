@@ -15,6 +15,8 @@ import { HttpModule } from '@angular/http';
 import { UserService } from './user.service';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AuthService } from './auth.service';
+import { ShareModule } from './share.module';
+import { AngularFireFunctionsModule, FunctionsRegionToken } from '@angular/fire/functions';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,14 +28,17 @@ import { AuthService } from './auth.service';
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    HttpModule
+    HttpModule,
+    ShareModule,
+    AngularFireFunctionsModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     UserService,
-    AuthService
+    AuthService,
+    { provide: FunctionsRegionToken, useValue: 'us-central1' }
   ],
   bootstrap: [AppComponent]
 })
